@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aryan's Blog</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Welcome to Aryan's Blog</h1>
+    <nav>
+      <button id="menu-btn">Menu ☰</button>
+      <ul id="menu">
+        <li><a href="#posts">Posts</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Comment</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="posts">
+      <h2>Latest Blog Posts</h2>
+      <article>
+        <h3>How I Started My Tech Journey</h3>
+        <p>I began my programming journey with C++ and eventually fell in love with web development...</p>
+      </article>
+      <article>
+        <h3>Why I Love Front-End Development</h3>
+        <p>Designing user-friendly interfaces with HTML, CSS and JavaScript brings ideas to life...</p>
+      </article>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I'm Aryan Gupta, a BCA graduate passionate about software development and solving real-world problems.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Leave a Comment</h2>
+      <form id="comment-form">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <textarea id="comment" placeholder="Your Comment" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="comment-msg"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Aryan's Blog</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
