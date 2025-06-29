@@ -4,14 +4,142 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aryan's Blog</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #f0f8ff, #e6e6fa);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #4b0082;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700;
+    }
+
+    main {
+      padding: 2rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #4b0082;
+    }
+
+    article {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    article:hover {
+      transform: scale(1.02);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    form button {
+      background: #4b0082;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: #6a0dad;
+    }
+
+    #comment-msg {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: green;
+    }
+
+    footer {
+      background: #4b0082;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Welcome to Aryan's Blog</h1>
+    <h1>Aryan's Blog</h1>
     <nav>
-      <button id="menu-btn">Menu ☰</button>
-      <ul id="menu">
+      <ul>
         <li><a href="#posts">Posts</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Comment</a></li>
@@ -24,17 +152,17 @@
       <h2>Latest Blog Posts</h2>
       <article>
         <h3>How I Started My Tech Journey</h3>
-        <p>I began my programming journey with C++ and eventually fell in love with web development...</p>
+        <p>I began my programming journey with C++ and eventually fell in love with web development. It all started with simple problems and ended up becoming my passion.</p>
       </article>
       <article>
         <h3>Why I Love Front-End Development</h3>
-        <p>Designing user-friendly interfaces with HTML, CSS and JavaScript brings ideas to life...</p>
+        <p>Designing user-friendly interfaces and seeing ideas come alive on the screen brings me joy. With HTML, CSS, and JavaScript, I build interfaces that people enjoy using.</p>
       </article>
     </section>
 
     <section id="about">
       <h2>About Me</h2>
-      <p>I'm Aryan Gupta, a BCA graduate passionate about software development and solving real-world problems.</p>
+      <p>I'm Aryan Gupta, a BCA graduate passionate about building meaningful web experiences and solving real-world problems using code.</p>
     </section>
 
     <section id="contact">
@@ -49,9 +177,24 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Aryan's Blog</p>
+    <p>&copy; 2025 Aryan's Blog. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("comment-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const comment = document.getElementById("comment").value.trim();
+      const msg = document.getElementById("comment-msg");
+      if (name && comment) {
+        msg.textContent = `Thanks for your comment, ${name}!`;
+        msg.style.color = "green";
+        this.reset();
+      } else {
+        msg.textContent = "Please fill in all fields.";
+        msg.style.color = "red";
+      }
+    });
+  </script>
 </body>
 </html>
